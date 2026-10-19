@@ -2,11 +2,11 @@
 using ChromaMusicSearch.Services;
 
 
-var chromaClientService = new ChromaClientService("http://localhost:8000/api/v1/");
+var chromaClientService = new ChromaClientService("http://localhost:8000/api/v2/");
 var collection = await chromaClientService.GetCollectionAsync("music");
 
 // Koleksiyonla bağlantı kurulduktan sonra ChromaCollectionService kullanılır
-var chromaCollectionService = new ChromaCollectionService(collection, new ChromaConfigurationOptions("http://localhost:8000/api/v1/"), new HttpClient());
+var chromaCollectionService = new ChromaCollectionService(collection, new ChromaConfigurationOptions("http://localhost:8000/api/v2/"), new HttpClient());
 
 // Şarkı kimlikleri
 List<string> songIds = ["1", "2", "3", "4", "5"];

@@ -16,7 +16,7 @@ namespace ChromaMusicSearch.Services
 
         public async Task<ChromaCollection> GetCollectionAsync(string collectionName)
         {
-            var collection = await _client.GetOrCreateCollection(collectionName);
+            var collection = await _client.GetOrCreateCollectionAsync(collectionName);
             return collection;
         }
     }

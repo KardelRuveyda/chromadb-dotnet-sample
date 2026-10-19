@@ -72,14 +72,14 @@ Aşağıda projenizdeki ana adımlar ve kod örneklerini bulabilirsiniz.
    using ChromaDB.Client;
    using ChromaMusicSearch.Services;
 
-   var chromaClientService = new ChromaClientService("http://localhost:8000/api/v1/");
+   var chromaClientService = new ChromaClientService("http://localhost:8000/api/v2/");
    var collection = await chromaClientService.GetCollectionAsync("music");
    ```
 
 ### 2. **Koleksiyon Oluşturma**
    Müzik verilerini saklamak için bir koleksiyon oluşturun:
    ```csharp
-   var chromaCollectionService = new ChromaCollectionService(collection, new ChromaConfigurationOptions("http://localhost:8000/api/v1/"), new HttpClient());
+   var chromaCollectionService = new ChromaCollectionService(collection, new ChromaConfigurationOptions("http://localhost:8000/api/v2/"), new HttpClient());
    ```
 
 ### 3. **Veri Ekleme**
