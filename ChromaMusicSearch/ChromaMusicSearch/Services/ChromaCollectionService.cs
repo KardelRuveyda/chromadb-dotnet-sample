@@ -15,13 +15,13 @@ namespace ChromaMusicSearch.Services
         // Verileri koleksiyona ekleme
         public async Task AddDataAsync(List<string> ids, List<ReadOnlyMemory<float>> embeddings, List<Dictionary<string, object>> metadata)
         {
-            await _collectionClient.Add(ids, embeddings, metadata);
+            await _collectionClient.AddAsync(ids, embeddings, metadata);
         }
 
         // Vektör sorgusu yapma
         public async Task<IEnumerable<ChromaCollectionQueryEntry>> QueryAsync(List<ReadOnlyMemory<float>> queryEmbedding, int nResults)
         {
-            var queryResults = await _collectionClient.Query(
+            var queryResults = await _collectionClient.QueryAsync(
                 queryEmbeddings: queryEmbedding,
                 nResults: nResults,
                 include: ChromaQueryInclude.Metadatas | ChromaQueryInclude.Distances);
